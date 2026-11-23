@@ -157,6 +157,18 @@
     .email .arrow, .cta .arrow { width: .7em; height: .7em; margin-left: .3em; vertical-align: .05em; color: var(--muted); transition: transform .3s cubic-bezier(.2,.8,.2,1), color .2s ease; }
     .contacts .email:hover .arrow { color: var(--accent); transform: translate(2px, -2px); }
     .cta { display: none; }
+    .cta-d {
+      display: inline-flex; align-items: center;
+      margin-top: 24px; padding: 9px 16px;
+      border: 1px solid var(--line); border-radius: 999px;
+      color: var(--muted); text-decoration: none;
+      font-family: "Geist Mono", ui-monospace, Menlo, monospace;
+      font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase;
+      transition: color .2s ease, border-color .2s ease;
+    }
+    .cta-d .arrow { width: 10px; height: 10px; margin-left: 8px; transition: transform .3s cubic-bezier(.2,.8,.2,1); }
+    .cta-d:hover { color: var(--accent); border-color: var(--accent); }
+    .cta-d:hover .arrow { transform: translate(2px, -2px); }
     .contacts .email:hover { color: var(--accent); border-color: var(--accent); }
     .block + .block { margin-top: 32px; }
     .block .mono { display: block; margin-bottom: 12px; }
@@ -223,6 +235,7 @@
       .soon { margin-right: 4px; }
       .soon .txt { display: none; }
       .lead { font-size: 38px; line-height: 1.08; }
+      .cta-d { display: none; }
       .cta {
         display: flex; align-items: center; justify-content: center;
         width: 100%; height: 56px; margin: 0 0 28px;
@@ -283,6 +296,7 @@
           <li><span class="name">Blissful Plans</span><svg class="spark" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0v12M0 6h12M1.8 1.8l8.4 8.4M10.2 1.8l-8.4 8.4" stroke="currentColor" stroke-width="1.2"/></svg></li>
           <li><span class="name">Settler</span><svg class="spark" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0v12M0 6h12M1.8 1.8l8.4 8.4M10.2 1.8l-8.4 8.4" stroke="currentColor" stroke-width="1.2"/></svg></li>
         </ul>
+        <a class="cta-d" href="https://forms.gle/ncaiujMfgmUH1JyG9" target="_blank" rel="noopener">Leave a request<svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/></svg></a>
       </div>
     </div>
   </div>
