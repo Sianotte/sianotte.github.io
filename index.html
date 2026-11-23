@@ -15,7 +15,8 @@
       --fg: #f2f2f0;
       --muted: #7d7d78;
       --line: rgba(242, 242, 240, 0.14);
-      --accent: #ff9e6d;
+      --accent: #ff7a3d;
+      --live: #c6f432;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -41,7 +42,9 @@
       display: inline-block;
       width: 7px; height: 7px;
       border-radius: 50%;
-      background: var(--accent);
+      background: var(--live);
+      box-shadow: 0 0 0 0 rgba(198,244,50,.6);
+      animation: pulse 2.4s ease-out infinite;
       margin-right: 8px;
       vertical-align: 1px;
     }
@@ -107,11 +110,31 @@
       font-weight: 500;
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      cursor: default;
     }
-    .clients li span { font-family: "Geist Mono", ui-monospace, monospace; font-size: 11px; color: var(--muted); font-weight: 400; }
+    .clients .name { transition: transform .35s cubic-bezier(.2,.8,.2,1), color .25s ease; }
+    .spark { width: 10px; height: 10px; color: var(--muted); transition: transform .5s cubic-bezier(.2,.8,.2,1), color .25s ease; }
+    .clients li:hover .name { transform: translateX(8px); color: var(--accent); }
+    .clients li:hover .spark { transform: rotate(90deg) scale(1.3); color: var(--accent); }
+
+    .lead .w { display: inline-block; transition: color .2s ease, transform .3s cubic-bezier(.2,.8,.2,1); }
+    .lead .w:hover { color: var(--accent); transform: translateY(-4px); font-style: italic; }
+
+    .wordmark span { display: inline-block; transition: transform .45s cubic-bezier(.2,.8,.2,1), color .25s ease; }
+    .wordmark span:hover { color: var(--accent); transform: translateY(-6%); }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(198,244,50,.55); }
+      70% { box-shadow: 0 0 0 8px rgba(198,244,50,0); }
+      100% { box-shadow: 0 0 0 0 rgba(198,244,50,0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; animation: none !important; }
+    }
     .wordmark {
       font-weight: 600;
-      font-size: clamp(64px, 25.6vw, 520px);
+      font-size: clamp(64px, 25vw, 520px);
       line-height: 0.8;
       letter-spacing: -0.06em;
       margin: 0 0 clamp(16px, 2vw, 28px) -0.04em;
@@ -120,7 +143,7 @@
     @media (max-width: 760px) {
       .grid { grid-template-columns: 1fr; padding: 56px 0 48px; }
       .clients li { font-size: 15px; }
-      .wordmark { font-size: 24vw; }
+      .wordmark { font-size: 23.4vw; }
       .meta { font-size: 11px; }
       .meta .hide-m { display: none; }
     }
@@ -158,30 +181,43 @@
       <div class="block">
         <span class="mono">Selected clients &amp; partners</span>
         <ul class="clients">
-          <li>Adobe<span>01</span></li>
-          <li>Figma<span>02</span></li>
-          <li>ElevenLabs<span>03</span></li>
-          <li>Cursor<span>04</span></li>
-          <li>Replit<span>05</span></li>
-          <li>Anything<span>06</span></li>
-          <li>Fish Audio<span>07</span></li>
-          <li>Luma AI<span>08</span></li>
-          <li>KIASA<span>09</span></li>
-          <li>Growfit<span>10</span></li>
-          <li>SailoTech<span>11</span></li>
-          <li>8Blocks<span>12</span></li>
-          <li>Kajimono<span>13</span></li>
-          <li>Titan Partners<span>14</span></li>
-          <li>Blissful Plans<span>15</span></li>
+          <li><span class="name">Adobe</span><svg class="spark" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0v12M0 6h12M1.8 1.8l8.4 8.4M10.2 1.8l-8.4 8.4" stroke="currentColor" stroke-width="1.2"/></svg></li>
+          <li><span class="name">Figma</span><svg class="spark" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0v12M0 6h12M1.8 1.8l8.4 8.4M10.2 1.8l-8.4 8.4" stroke="currentColor" stroke-width="1.2"/></svg></li>
+          <li><span class="name">ElevenLabs</span><svg class="spark" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0v12M0 6h12M1.8 1.8l8.4 8.4M10.2 1.8l-8.4 8.4" stroke="currentColor" stroke-width="1.2"/></svg></li>
+          <li><span class="name">Cursor</span><svg class="spark" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0v12M0 6h12M1.8 1.8l8.4 8.4M10.2 1.8l-8.4 8.4" stroke="currentColor" stroke-width="1.2"/></svg></li>
+          <li><span class="name">Replit</span><svg class="spark" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0v12M0 6h12M1.8 1.8l8.4 8.4M10.2 1.8l-8.4 8.4" stroke="currentColor" stroke-width="1.2"/></svg></li>
+          <li><span class="name">Anything</span><svg class="spark" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0v12M0 6h12M1.8 1.8l8.4 8.4M10.2 1.8l-8.4 8.4" stroke="currentColor" stroke-width="1.2"/></svg></li>
+          <li><span class="name">Fish Audio</span><svg class="spark" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0v12M0 6h12M1.8 1.8l8.4 8.4M10.2 1.8l-8.4 8.4" stroke="currentColor" stroke-width="1.2"/></svg></li>
+          <li><span class="name">Luma AI</span><svg class="spark" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0v12M0 6h12M1.8 1.8l8.4 8.4M10.2 1.8l-8.4 8.4" stroke="currentColor" stroke-width="1.2"/></svg></li>
+          <li><span class="name">KIASA</span><svg class="spark" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0v12M0 6h12M1.8 1.8l8.4 8.4M10.2 1.8l-8.4 8.4" stroke="currentColor" stroke-width="1.2"/></svg></li>
+          <li><span class="name">Growfit</span><svg class="spark" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0v12M0 6h12M1.8 1.8l8.4 8.4M10.2 1.8l-8.4 8.4" stroke="currentColor" stroke-width="1.2"/></svg></li>
+          <li><span class="name">SailoTech</span><svg class="spark" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0v12M0 6h12M1.8 1.8l8.4 8.4M10.2 1.8l-8.4 8.4" stroke="currentColor" stroke-width="1.2"/></svg></li>
+          <li><span class="name">8Blocks</span><svg class="spark" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0v12M0 6h12M1.8 1.8l8.4 8.4M10.2 1.8l-8.4 8.4" stroke="currentColor" stroke-width="1.2"/></svg></li>
+          <li><span class="name">Kajimono</span><svg class="spark" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0v12M0 6h12M1.8 1.8l8.4 8.4M10.2 1.8l-8.4 8.4" stroke="currentColor" stroke-width="1.2"/></svg></li>
+          <li><span class="name">Titan Partners</span><svg class="spark" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0v12M0 6h12M1.8 1.8l8.4 8.4M10.2 1.8l-8.4 8.4" stroke="currentColor" stroke-width="1.2"/></svg></li>
+          <li><span class="name">Blissful Plans</span><svg class="spark" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0v12M0 6h12M1.8 1.8l8.4 8.4M10.2 1.8l-8.4 8.4" stroke="currentColor" stroke-width="1.2"/></svg></li>
+          <li><span class="name">Settler</span><svg class="spark" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0v12M0 6h12M1.8 1.8l8.4 8.4M10.2 1.8l-8.4 8.4" stroke="currentColor" stroke-width="1.2"/></svg></li>
         </ul>
       </div>
     </div>
   </div>
 
-  <h1 class="wordmark">Sianotte</h1>
+  <h1 class="wordmark" aria-label="Sianotte">Sianotte</h1>
   <div class="meta mono">
     <span>&copy; 2026 Sianotte<span class="hide-m"> Design Studio</span></span>
     <span>Paris</span>
   </div>
+  <script>
+    (function () {
+      var lead = document.querySelector('.lead');
+      lead.innerHTML = lead.textContent.trim().split(/\s+/).map(function (w) {
+        return '<span class="w">' + w + '</span>';
+      }).join(' ');
+      var wm = document.querySelector('.wordmark');
+      wm.innerHTML = wm.textContent.split('').map(function (c) {
+        return '<span aria-hidden="true">' + c + '</span>';
+      }).join('');
+    })();
+  </script>
 </body>
 </html>
