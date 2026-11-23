@@ -121,8 +121,8 @@
     .lead .w { display: inline-block; transition: color .2s ease, transform .3s cubic-bezier(.2,.8,.2,1); }
     .lead .w:hover { color: var(--accent); transform: translateY(-4px); font-style: italic; }
 
-    .wordmark span { display: inline-block; transition: transform .45s cubic-bezier(.2,.8,.2,1), color .25s ease; }
-    .wordmark span:hover { color: var(--accent); transform: translateY(-6%); }
+    .wordmark span { display: inline-block; transition: transform .45s cubic-bezier(.2,.8,.2,1); }
+    .wordmark span:hover { transform: translateY(-6%); }
 
     @keyframes pulse {
       0% { box-shadow: 0 0 0 0 rgba(198,244,50,.55); }
@@ -171,12 +171,8 @@
 
     <div>
       <div class="block">
-        <span class="mono">Build on</span>
-        <div class="tags"><span class="tag">Shopify</span><span class="tag">Framer</span><span class="tag">Any platform</span></div>
-      </div>
-      <div class="block">
         <span class="mono">Focus</span>
-        <div class="tags"><span class="tag">E-commerce</span><span class="tag">Web3</span><span class="tag">Fintech</span></div>
+        <div class="tags"><span class="tag">Shopify</span><span class="tag">Framer</span><span class="tag">E-commerce</span><span class="tag">Web3</span><span class="tag">Fintech</span></div>
       </div>
       <div class="block">
         <span class="mono">Selected clients &amp; partners</span>
