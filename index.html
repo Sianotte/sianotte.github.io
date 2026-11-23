@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sianotte Design Studio</title>
+  <meta name="description" content="Sianotte Design Studio. Design engineer in Paris creating websites and digital products for ambitious brands.">
+  <meta name="theme-color" content="#0c0c0c">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0c0c0c;
+      --fg: #f2f2f0;
+      --muted: #7d7d78;
+      --line: rgba(242, 242, 240, 0.14);
+      --accent: #d7ff5f;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "Geist", "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: clamp(24px, 4vw, 48px);
+      overflow-x: hidden;
+    }
+    .mono {
+      font-family: "Geist Mono", ui-monospace, Menlo, monospace;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .meta { display: flex; justify-content: space-between; gap: 16px; }
+    .dot {
+      display: inline-block;
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-right: 8px;
+      vertical-align: 1px;
+    }
+    .grid {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px clamp(32px, 6vw, 96px);
+      align-content: center;
+      padding: 72px 0;
+    }
+    .lead {
+      margin-top: 20px;
+      font-size: clamp(26px, 3.2vw, 44px);
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      font-weight: 500;
+      max-width: 620px;
+    }
+    .top { align-items: center; }
+    .social { display: flex; align-items: center; gap: 10px; }
+    .soon { margin-right: 10px; white-space: nowrap; }
+    .social a {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px;
+      border: 1px solid var(--line); border-radius: 50%;
+      color: var(--fg);
+      transition: color .2s ease, border-color .2s ease;
+    }
+    .social a:hover { color: var(--accent); border-color: var(--accent); }
+    .contacts { margin-top: 40px; }
+    .contacts .mono { display: block; margin-bottom: 10px; }
+    .contacts .email {
+      color: var(--fg); text-decoration: none;
+      font-size: clamp(22px, 2.4vw, 30px);
+      font-weight: 500; letter-spacing: -0.02em;
+      border-bottom: 1px solid var(--line); padding-bottom: 4px;
+      transition: color .2s ease, border-color .2s ease;
+    }
+    .contacts .email::after { content: " ↗"; color: var(--muted); }
+    .contacts .email:hover { color: var(--accent); border-color: var(--accent); }
+    .block + .block { margin-top: 32px; }
+    .block .mono { display: block; margin-bottom: 12px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      font-family: "Geist Mono", ui-monospace, Menlo, monospace;
+      font-size: 12px;
+      padding: 6px 12px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+    .clients {
+      list-style: none;
+      columns: 2;
+      column-gap: 24px;
+      border-top: 1px solid var(--line);
+    }
+    .clients li {
+      break-inside: avoid;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 16px;
+      font-weight: 500;
+      display: flex;
+      justify-content: space-between;
+    }
+    .clients li span { font-family: "Geist Mono", ui-monospace, monospace; font-size: 11px; color: var(--muted); font-weight: 400; }
+    .wordmark {
+      font-weight: 600;
+      font-size: clamp(64px, 25.6vw, 520px);
+      line-height: 0.8;
+      letter-spacing: -0.06em;
+      margin: 0 0 clamp(16px, 2vw, 28px) -0.04em;
+      white-space: nowrap;
+    }
+    @media (max-width: 760px) {
+      .grid { grid-template-columns: 1fr; padding: 56px 0 48px; }
+      .clients li { font-size: 15px; }
+      .wordmark { font-size: 24vw; }
+      .meta { font-size: 11px; }
+      .meta .hide-m { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="meta mono top">
+    <span>Design engineer<span class="hide-m"> — Paris</span></span>
+    <nav class="social">
+      <span class="soon"><i class="dot"></i><span class="hide-m">New website </span>coming soon</span>
+      <a href="https://www.instagram.com/sianotte.design/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a href="https://www.linkedin.com/in/sianotte/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.49 2.49 0 1 1 5 8.48 2.49 2.49 0 0 1 4.98 3.5zM3 9.75h4v11H3zM9.5 9.75h3.8v1.6h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1v5.35h-4v-4.75c0-1.13-.02-2.6-1.58-2.6-1.59 0-1.83 1.24-1.83 2.52v4.83h-4z"/></svg></a>
+    </nav>
+  </div>
+
+  <div class="grid">
+    <div>
+      <p class="mono">Sianotte Design Studio</p>
+      <p class="lead">Creative websites and digital products for ambitious brands, from first sketch to launch.</p>
+      <div class="contacts">
+        <span class="mono">Get in touch</span>
+        <a class="email" href="mailto:info@sianotte.com">info@sianotte.com</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="block">
+        <span class="mono">Build on</span>
+        <div class="tags"><span class="tag">Shopify</span><span class="tag">Framer</span><span class="tag">Any platform</span></div>
+      </div>
+      <div class="block">
+        <span class="mono">Focus</span>
+        <div class="tags"><span class="tag">E-commerce</span><span class="tag">Web3</span><span class="tag">Fintech</span></div>
+      </div>
+      <div class="block">
+        <span class="mono">Selected clients &amp; partners</span>
+        <ul class="clients">
+          <li>Adobe<span>01</span></li>
+          <li>Figma<span>02</span></li>
+          <li>ElevenLabs<span>03</span></li>
+          <li>Cursor<span>04</span></li>
+          <li>Replit<span>05</span></li>
+          <li>Anything<span>06</span></li>
+          <li>Fish Audio<span>07</span></li>
+          <li>Luma AI<span>08</span></li>
+          <li>KIASA<span>09</span></li>
+          <li>Growfit<span>10</span></li>
+          <li>SailoTech<span>11</span></li>
+          <li>8Blocks<span>12</span></li>
+          <li>Kajimono<span>13</span></li>
+          <li>Titan Partners<span>14</span></li>
+          <li>Blissful Plans<span>15</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h1 class="wordmark">Sianotte</h1>
+  <div class="meta mono">
+    <span>&copy; 2026 Sianotte<span class="hide-m"> Design Studio</span></span>
+    <span>Paris</span>
+  </div>
+</body>
+</html>
