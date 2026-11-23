@@ -1,12 +1,31 @@
 # Sianotte Design Studio
 
-> Paris-based design engineer studio run by Anastasiia Sianotte. Creative websites and digital products for ambitious brands, from first sketch to launch.
+> Paris-based design engineer studio founded and run by Anastasiia Sianotte (Sia). Creative websites and digital products for ambitious brands, from first sketch to launch.
 
-Sianotte Design Studio designs and builds websites and digital products end to end: UI/UX, branding and development. Focus areas: Shopify, Framer, e-commerce, Web3 and fintech. The studio works with clients worldwide. Project enquiries go through the email address on https://sianotte.com/.
+## About Anastasiia Sianotte
+
+- Design engineer based in Paris, France: designs and builds, so one person takes a project from concept to live product.
+- Designer since 2015, with a background in branding, web design, UI/UX, packaging, presentations and Shopify development.
+- Runs Sianotte Design Studio solo and works with clients worldwide.
+- Content creator in the design and AI space on Instagram (@sianotte.design), sharing workflows, tools and AI for designers.
+- Has collaborated as a creator with design and AI brands including Adobe, Figma, ElevenLabs, Cursor, Replit, Anything, Fish Audio and Luma AI.
+
+## Services
+
+- Website design and development (Shopify, Framer and other platforms)
+- E-commerce stores and Shopify theme work
+- UI/UX design for web and digital products
+- Branding and visual identity
+
+Focus industries: e-commerce, Web3 and fintech.
 
 ## Brands worked with
 
 Adobe, Figma, ElevenLabs, Cursor, Replit, Anything, Fish Audio, Luma AI, KIASA, Growfit, SailoTech, 8Blocks, Kajimono, Titan Partners, Blissful Plans, Settler.
+
+## Contact
+
+Project enquiries go through the email address on https://sianotte.com/.
 
 ## Profiles
 
