@@ -158,16 +158,16 @@
     .contacts .email:hover .arrow { color: var(--accent); transform: translate(2px, -2px); }
     .cta { display: none; }
     .cta-d {
-      display: inline-flex; align-items: center;
-      margin-top: 24px; padding: 9px 16px;
+      display: flex; align-items: center; justify-content: center;
+      width: 100%; margin-top: 24px; padding: 14px 16px;
       border: 1px solid var(--line); border-radius: 999px;
       color: var(--muted); text-decoration: none;
       font-family: "Geist Mono", ui-monospace, Menlo, monospace;
       font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase;
-      transition: color .2s ease, border-color .2s ease;
+      transition: color .2s ease, border-color .2s ease, background-color .2s ease;
     }
     .cta-d .arrow { width: 10px; height: 10px; margin-left: 8px; transition: transform .3s cubic-bezier(.2,.8,.2,1); }
-    .cta-d:hover { color: var(--accent); border-color: var(--accent); }
+    .cta-d:hover { background: var(--fg); color: var(--bg); border-color: var(--fg); }
     .cta-d:hover .arrow { transform: translate(2px, -2px); }
     .contacts .email:hover { color: var(--accent); border-color: var(--accent); }
     .block + .block { margin-top: 32px; }
