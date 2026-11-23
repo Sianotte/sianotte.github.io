@@ -238,6 +238,7 @@
       .soon .txt { display: none; }
       .lead { font-size: 38px; line-height: 1.08; }
       .cta-d { display: none; }
+      .br-d { display: none; }
       .cta {
         display: flex; align-items: center; justify-content: center;
         width: 100%; height: 56px; margin: 0 0 28px;
@@ -266,7 +267,7 @@
   <div class="grid">
     <div>
       <p class="mono">Sianotte Design Studio</p>
-      <p class="lead">Creative websites and digital products for ambitious brands, from first sketch to launch.</p>
+      <p class="lead">Creative websites<br class="br-d"> and digital products for ambitious brands, from first sketch to launch.</p>
       <div class="contacts">
         <span class="mono">Get in touch</span>
         <a class="email" href="mailto:info@sianotte.com">info@sianotte.com<svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/></svg></a>
@@ -313,9 +314,19 @@
   <script>
     (function () {
       var lead = document.querySelector('.lead');
-      lead.innerHTML = lead.textContent.trim().split(/\s+/).map(function (w) {
-        return '<span class="w">' + w + '</span>';
-      }).join(' ');
+      Array.prototype.slice.call(lead.childNodes).forEach(function (node) {
+        if (node.nodeType !== 3) return;
+        var frag = document.createDocumentFragment();
+        node.textContent.split(/(\s+)/).forEach(function (part) {
+          if (!part) return;
+          if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(' ')); return; }
+          var span = document.createElement('span');
+          span.className = 'w';
+          span.textContent = part;
+          frag.appendChild(span);
+        });
+        lead.replaceChild(frag, node);
+      });
       var wm = document.querySelector('.wordmark');
       wm.innerHTML = wm.textContent.split('').map(function (c) {
         return '<span aria-hidden="true">' + c + '</span>';
